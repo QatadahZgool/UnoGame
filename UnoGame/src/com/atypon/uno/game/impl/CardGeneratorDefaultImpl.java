@@ -22,15 +22,15 @@ public class CardGeneratorDefaultImpl implements CardGenerator {
 
     private List<Card> generateCards() {
         List<Card> cards = new ArrayList<>();
-        generateNumberdCardsWithActionCards(Color.RED, cards);
-        generateNumberdCardsWithActionCards(Color.YELLOW,cards);
-        generateNumberdCardsWithActionCards(Color.GREEN,cards);
-        generateNumberdCardsWithActionCards(Color.BLUE,cards);
+        generateColoredCards(Color.RED, cards);
+        generateColoredCards(Color.YELLOW,cards);
+        generateColoredCards(Color.GREEN,cards);
+        generateColoredCards(Color.BLUE,cards);
         generateWildCards(cards);
         return cards;
     }
 
-    private void generateNumberdCardsWithActionCards(Color color , List<Card> cards){
+    private void generateColoredCards(Color color , List<Card> cards){
         cards.add(new NumberedCard(color, Status.NOT_USING, 0));
         for(int i=0;i<2;i++) {
             for (int j = 1; j < 10; j++) {
